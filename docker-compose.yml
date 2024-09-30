@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  user-management:
+    build: ./user-management
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./user-management:/usr/src/app
+
+  prediction-service:
+    build: ./prediction-service
+    ports:
+      - "8002:8000"
+    volumes:
+      - ./prediction-service:/usr/src/app
+
+  data-service:
+    build: ./data-service
+    ports:
+      - "8003:8000"
+    volumes:
+      - ./data-service:/usr/src/app
