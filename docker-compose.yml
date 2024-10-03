@@ -6,17 +6,18 @@ services:
       - "8001:8000"
     volumes:
       - ./user-management:/usr/src/app
-
+      - ./shared:/usr/src/shared
   prediction-service:
     build: ./prediction-service
     ports:
       - "8002:8000"
     volumes:
       - ./prediction-service:/usr/src/app
-
+      - ./shared:/usr/src/shared
   data-service:
     build: ./data-service
     ports:
       - "8003:8000"
     volumes:
       - ./data-service:/usr/src/app
+      - ./shared:/usr/src/shared

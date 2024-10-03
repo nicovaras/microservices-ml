@@ -9,4 +9,8 @@ model = joblib.load(model_path)
 def make_prediction(features: list):
     prediction = model.predict([features])[0]
     probabilities = model.predict_proba([features])[0].tolist()
+ 
+    prediction = int(prediction)  
+    probabilities = [float(prob) for prob in probabilities]  
+
     return prediction, probabilities
