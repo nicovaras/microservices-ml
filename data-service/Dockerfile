@@ -1,5 +1,6 @@
 FROM python:3.9-slim
 WORKDIR /usr/src/app
+ENV PYTHONPATH="/usr/src/app:/usr/src/shared"
 COPY requirements.txt . 
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
